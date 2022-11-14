@@ -1,0 +1,129 @@
+\documentclass[a4paper,openany,nobib]{tufte-book}
+%define colours
+\usepackage{xcolor}
+\usepackage{amsmath}
+\definecolor{tred}{HTML}{450000}
+\definecolor{tgray}{HTML}{161616}
+%%pagestyle
+\usepackage[protrusion=true,expansion]{microtype}
+\usepackage{booktabs}
+\usepackage{fancyvrb}
+\fvset{fontsize=\normalsize}
+\fancypagestyle{plain}{}
+%%references
+%%final styling
+\color{tgray}
+\colorlet{darkgray}{tred}
+\begin{document}
+\thispagestyle{empty}
+\chapter{Case Study 1: SIR Models} 
+\setcounter{page}{1}
+\section{Session 1:}%
+\label{sec:Session 1:}
+
+There are 3 components to consider:
+\begin{enumerate}
+	\item Susceptible $S(t)$ - \textit{those who can get the disease}
+	\item Infectious $I(t)$ - \textit{those who have the disease}
+	\item Recovered $R(t)$ - \textit{those who had the disease and no longer do}
+\end{enumerate}
+People in these catagories move from one another via the routine:
+\begin{equation*}
+	S \xrightarrow{\beta I} I  \xrightarrow{\gamma} R
+\end{equation*}
+To model this we use the \textbf{Law of Mass Action} i.e. the idea that \textbf{the rate of change is proportional to the product of reactants involved in the equation}.
+
+For example we have:
+\begin{align*}
+	A+ B &\xrightarrow{k} C\\
+	\frac{d[A]}{dt} &= -k \left[ A \right]\left[ B \right] 
+\end{align*}
+
+In our context we thus have the equations:
+\begin{align}
+	  \label{eq:eqn1}
+	\frac{dS}{dt} &=  - \beta SI\\ 
+	  \label{eq:eqn2} 
+	\frac{dI}{dt} &= \beta S I - \gamma I\\
+	  \label{eq:eqn3}
+	\frac{dR}{dt} &= \gamma I
+\end{align}
+\marginnote[-2cm]{Here $\beta$ is the infection rate (per time, per infective), $\gamma$ is the rate at which the infected are removed.}
+\marginnote{Note that:
+\begin{align*}
+	S(0)&= S_0\\
+	I(0) &= I_0\\
+	R(0) &= 0
+\end{align*}
+}
+
+We have several assumptions inherent to our basic model:
+\begin{enumerate}
+	\item[A1] No natural births or deaths,
+	\item[A2] No spatial effects,
+	\item[A3] System is well mixed,
+	\item[A4] Infection and ``fixing'' (i.e. whatever process causes someone to no longer be infected) occur instantaneously,
+\end{enumerate}
+
+We can add equations \eqref{eq:eqn1} - \eqref{eq:eqn3} to see that $S+I+R=S_0+I_0 :=N$, where $N$ is a constant which is the total population.
+\marginnote{Also note that \eqref{eq:eqn3} is able to be decoupled.}
+
+We note now that \begin{equation}
+	\frac{dI}{dt} = \beta \left( S-\rho \right)I 
+\end{equation}
+where $\rho = \gamma/\beta$.
+\marginnote{Epidemics only occur if $S_0 > \rho$ at $t=0$.}
+We now define an \textbf{epidemic} which describes the situation if, at $t=0$
+\begin{equation*}
+	\frac{dI}{dt}> 0.
+\end{equation*}
+We let $R_0 =S_0 / \rho = \beta S_0 / \gamma$ be the \textbf{basic reproduction number}; we have then that if $R_0 >1$, an epidemic will occur.
+
+\subsection{To recap:}%
+\label{sub:To recap:}
+
+\begin{enumerate}
+	\item $\beta S_0$ is the rate at which an infected person produces infections in a population of $S_0$ people susceptible to the disease.
+	\item $1/\gamma$ is the time someone is infectious.
+	\item An infected person will produce $\beta S_0 \times 1/\gamma$ new infected people.
+\end{enumerate}
+\section{Session 2:}%
+\label{sec:Session 2:}
+\textbf{Nondimensionalisation}
+\marginnote{In our case we might define: 
+\begin{enumerate}
+	\item $S\rightarrow[S]\hat S$
+	\item $I\rightarrow[I]\hat I$
+	\item $t\rightarrow[t]\hat t$
+\end{enumerate}
+Where ``hatted'' variables have been scaled by the bracketed variables, i.e. $\hat S := S/[S]$.}
+might be useful in order to better highlight important constants, and also puts the model into a framework in order to better focus on the size of variables.
+
+For population models we tend to use $N$ as the scaling variable i.e. $\hat S := S/N, \hat I := I/N$.
+We then have:
+\begin{align*}
+	\frac{N}{[t]} \frac{d\hat S}{d\hat t} &= -\beta N^2 \hat S \hat I\\
+	\frac{N}{[t]} \frac{d\hat I}{d\hat t} &= \beta N^2 \hat S \hat I - \gamma N \hat I\\
+\end{align*}
+where $t = [t]\hat t$.
+We might then scale $[t] = 1/\gamma$ e.g:
+\begin{align*}
+	\frac{d\hat S}{d\hat t} &= -\beta N \hat S \hat I \gamma\\
+	 \frac{d\hat I}{d\hat t} &= \beta \frac{N}{\gamma}  \hat S \hat I -  \hat I
+\end{align*}
+Here $t$ has been scaled by the timescale of recovery, whereas if we had chosen $[t] = 1/\beta N$ it would represent the timescale of infection,
+\begin{align}
+	\label{eq:nd1}
+	\frac{d\hat S}{d\hat t} &= -\hat S \hat I\\
+	\label{eq:nd2}
+	 \frac{d\hat I}{d\hat t} &= \hat S \hat I - \mu \hat I
+\end{align}
+where $\mu := \frac{\gamma}{\beta N}$ 
+
+\subsection{Further Exploration}%
+\label{sub:Further Exploration}
+
+\begin{itemize}
+	\item Include a vaccination rate which kicks in at time $T$, and is a function of the amount dead, infected, and susceptible etc
+\end{itemize}
+\end{document}
