@@ -126,4 +126,37 @@ where $\mu := \frac{\gamma}{\beta N}$
 \begin{itemize}
 	\item Include a vaccination rate which kicks in at time $T$, and is a function of the amount dead, infected, and susceptible etc
 \end{itemize}
+\section{Session 3:}%
+\label{sec:Session 3:}
+Possible extensions to the model:
+\subsection{Gonorrhea Transmission}%
+\label{sub:Gonorrhea Transmission}
+We have assumptions:
+\begin{itemize}
+	\item[G1] Population is uniformly promiscuous
+	\item[G2] Only heterosexual encounters
+	\item[G3] Incubation period is short compared to length of infection (\textit{This implies instantaneous infection}) \marginnote{Short would mean roughly 3-7 days.}
+\end{itemize}
+Also assume:
+\begin{align*}
+	\frac{dS}{dt} &=  -rS\bar I +aI\\
+	\frac{dI}{dt} &= rS\bar I -aI\\
+	\frac{d\bar S}{dt} &= -\bar r\bar SI+ \bar a \bar I\\
+	\frac{d\bar I}{dt} &= \bar r \bar S I - \bar a \bar I 
+\end{align*}
+\marginnote{Values pertaining to females are barred, e.g. the rate of males infecting females is $\bar r$.}
+This model implies $S+I=N$ and $\bar S + \bar I = \bar N$, assuming a closed population. We can use this to derive:
+\begin{align*}
+	\frac{dI}{dt} &= r\left( N-I \right)\bar I - aI \\
+	\frac{d\bar I}{dt}  &=  \bar r\left( \bar N - \bar I \right) -\bar a \bar I
+\end{align*}
+\subsection{Network Model}%
+\label{sub:Network Model}
+We have 
+\begin{align*}
+	\frac{dS_i}{dt} &=  -\beta S_i I_i - \sum_{j \pm i}\bar \beta a_{ij}S_i I_j + \gamma I_i\\
+	\frac{dI_i}{dt} &= - \frac{dS_i}{dt}  
+\end{align*}
+\marginnote{$a_{ij}$ are the entries of the adjacencny matrix; $a_{ij} = 1$ if locations are connected and 0 else. Note here that $j$ represents the neighbouring nodes, and $i$ is the current node.}
+In general, we may introduce weights into the adjacencny matrix.
 \end{document}

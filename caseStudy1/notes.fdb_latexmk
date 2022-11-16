@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1668093573 "notes.tex" "notes.pdf" "notes" 1668093574
+["pdflatex"] 1668615886 "notes.tex" "notes.pdf" "notes" 1668615887
   "/dev/null" 0 -1 0 ""
   "/home/sulch/.git_projects/ztex/texmf/tex/latex/local/tufte-book.cls" 1613292990 2212 72b8d9b2edd5e439b6164c9cfea2517f ""
   "/home/sulch/.git_projects/ztex/texmf/tex/latex/local/tufte-common.def" 1614246848 70890 39ee6270ae2a5eaafbeb4d9099c5adc6 ""
@@ -17,6 +17,7 @@
   "/usr/share/texmf-dist/fonts/tfm/adobe/palatino/pplri8r.tfm" 1650183167 2720 70000d5e623e601132eab3cded5b819b ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/palatino/pplri9d.tfm" 1650183167 4636 ff01db17fb5451eb75ae6574be71b347 ""
   "/usr/share/texmf-dist/fonts/tfm/adobe/palatino/pplrij8r.tfm" 1650183167 2752 e6517395459b168a8c504102102c1389 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmex10.tfm" 1650183167 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi10.tfm" 1650183167 1528 abec98dbc43e172678c11b3b9031252a ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmr10.tfm" 1650183167 1296 45809c5a464d5f32c8f98ba97c1bb47f ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1650183167 1124 6c73e740cf17375f03eec0ee63599741 ""
@@ -32,6 +33,7 @@
   "/usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1650183167 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/share/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb" 1650183167 62231 6fa2851364e6117779162ea79cb96ef4 ""
   "/usr/share/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb" 1650183167 58411 be6be158edebf79e4cde3c52c70cc0ed ""
+  "/usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmr.pfb" 1650183167 9356 a3851bc942e9b6995883193472ba1847 ""
   "/usr/share/texmf-dist/fonts/type1/public/mathpazo/fplmri.pfb" 1650183167 15213 d999bbe8bd9c8f231f3f66a737c76478 ""
   "/usr/share/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb" 1650183167 52406 dad2f72863a03727d5f536c64a69c452 ""
   "/usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb" 1650183167 52665 661b1e6b26edb5f50dd491f8a701cb57 ""
@@ -43,6 +45,7 @@
   "/usr/share/texmf-dist/fonts/vf/adobe/palatino/pplri9d.vf" 1650183167 2328 b4b85e045d04906281f01d959b20f19d ""
   "/usr/share/texmf-dist/fonts/vf/public/mathpazo/zplmr7m.vf" 1650183167 1812 de7624743c8bafe2ce204bec2f72ce7e ""
   "/usr/share/texmf-dist/fonts/vf/public/mathpazo/zplmr7t.vf" 1650183167 1532 73e2c76c81e4f977ab65540630baf4f0 ""
+  "/usr/share/texmf-dist/fonts/vf/public/mathpazo/zplmr7v.vf" 1650183167 1436 3cc3caf644d79936444909aaff6786a8 ""
   "/usr/share/texmf-dist/fonts/vf/public/mathpazo/zplmr7y.vf" 1650183167 1372 31129ac1f6b6f62aaec24c8fed41b02b ""
   "/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1650183167 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/share/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1650183167 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -140,9 +143,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1650183167 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1666444770 4279749 bb23f2b98a377c1622c83b4f54f23034 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1666444757 2927664 9eaffb523ab5bf4b99774602a9b951f6 ""
-  "notes.aux" 1668093574 1817 9e92e520f118d7d4bec256ef3527dc40 "pdflatex"
-  "notes.out" 1668093574 390 389b3918b2835f4629fc3eb91f7a4bac "pdflatex"
-  "notes.tex" 1668093572 4708 8bf348969c404b925db8da845076cbce ""
+  "notes.aux" 1668615886 2336 74872f809219d364fca44df55f33e793 "pdflatex"
+  "notes.out" 1668615886 497 429583823f451679a814c56d8f5915e7 "pdflatex"
+  "notes.tex" 1668615885 6251 fd49767d85895e831dfff14b1869eb6c ""
   (generated)
   "notes.aux"
   "notes.log"
