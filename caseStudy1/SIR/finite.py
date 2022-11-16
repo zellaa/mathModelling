@@ -19,22 +19,21 @@ R = np.array([])
 r = 1
 a = 1
 ##
-def initialiseArrays(S,I,R):
+def initialiseArrays():
     I = np.zeros((J,N))
     I[30:50,0] = 0.8
     S = 1-I
     R = np.zeros((J,N))
-    S = np.reshape(S,(len(S),int(N)))
-    I = np.reshape(I,(len(I),int(N)))
-    R = np.reshape(R,(len(R),int(N)))
+    S = np.reshape(S,(len(S),int(N))).transpose()
+    I = np.reshape(I,(len(I),int(N))).transpose()
+    R = np.reshape(R,(len(R),int(N))).transpose()
     return S,I,R
-S,I,R = initialiseArrays(S,I,R)
+S,I,R = initialiseArrays()
 ##
-for i in range(0,int(N)):
-    sUpdate = S[:][i] +((np.roll(S[:][i],1) - 2*S[:][i]+np.roll(S[:][i],-1))*1/(deltaX**2)
-                        - a*I[:][i]*R[:][i])*1/deltaT
-    iUpdate = I[:][i] + (r*I[:][i]*S[:][i]- a*I[:][i])*1/deltaT
-    rUpdate = R[:][i] + (a*I[:][i])*1/deltaT
+for i in range(0,int(N)-1):
+    sUpdate = S[:][i] +((np.roll(S[:][i],1) - 2*S[:][i]+np.roll(S[:][i],-1))*1/(deltaX**2)- a*I[:][i]*R[:][i])*deltaT
+    iUpdate = I[:][i] + (r*I[:][i]*S[:][i]- a*I[:][i])*deltaT
+    rUpdate = R[:][i] + (a*I[:][i])*deltaT
     S[:][i+1] = sUpdate
     I[:][i+1] = iUpdate
     S[:][i+1] = rUpdate
