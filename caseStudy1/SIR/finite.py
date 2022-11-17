@@ -1,4 +1,6 @@
 ##
+#import matplotlib as mpl
+#mpl.use('TkAgg')  # or can use 'TkAgg', whatever you have/prefer
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
@@ -18,16 +20,17 @@ finalTime = 80
 x0 = 0
 xJ = 4
 finalSpace = xJ-x0
-deltaT = 0.001
+deltaT = 0.01
 deltaX = 0.01
 # Final lengths of arrays
 J = int(round(finalSpace/deltaX))
 N = int(round(finalTime/deltaT))
-diffusionScaling = 0.05
+diffusionScalingS = 0.005
+diffusionScalingI = 0.001
 ##
 # Placeholder function to generate initial data
 def initialiseArrays():
-    S = np.zeros((J,N))
+    S = np.ones((J,N))
     I = np.zeros((J,N))
     R = np.zeros((J,N))
     D = np.zeros((J,N))
@@ -36,9 +39,11 @@ def initialiseArrays():
     I = np.reshape(I,(len(I),int(N))).transpose()
     R = np.reshape(R,(len(R),int(N))).transpose()
     D = np.reshape(D,(len(D),int(N))).transpose()
-
-    S[0][100:200] = s0Hat
-    I[0] = i0Hat
+    #TODO: idk try different functions
+    S[0][0:100] = s0Hat
+    S[0][300:350] = 1-i0Hat*100
+    I[0][0:100] = i0Hat
+    I[0][300:350] = i0Hat*100
     R[0] = r0Hat
     D[0] = d0Hat
     return S,I,R,D
@@ -47,7 +52,7 @@ def initialiseArrays():
 def propagateSIR(S,I,R,D,N):
     for i in range(0,int(N)-1):
         sUpdate = S[:][i] +(
-                diffusionScaling*(np.roll(S[:][i],1) - 2*S[:][i]+np.roll(S[:][i],-1))*1/(deltaX**2)
+                diffusionScalingS*(np.roll(S[:][i],1) - 2*S[:][i]+np.roll(S[:][i],-1))*1/(deltaX**2)
                             - I[:][i]*S[:][i])*deltaT
         iUpdate = I[:][i] + (I[:][i]*S[:][i]- rho*I[:][i]-alpha*I[:][i])*deltaT
         rUpdate = R[:][i] + (rho*I[:][i])*deltaT
@@ -58,15 +63,31 @@ def propagateSIR(S,I,R,D,N):
         D[:][i+1] = dUpdate
     return S,I,R,D
 ##
+def propagateSIRWithID(S,I,R,D,N):
+    for i in range(0,int(N)-1):
+        sUpdate = S[:][i] +(
+                diffusionScalingS*(np.roll(S[:][i],1) - 2*S[:][i]+np.roll(S[:][i],-1))*1/(deltaX**2)
+                - I[:][i]*S[:][i])*deltaT
+        iUpdate = I[:][i] + (I[:][i]*S[:][i]- rho*I[:][i]-alpha*I[:][i])*deltaT +(
+                diffusionScalingI*(np.roll(I[:][i],1) - 2*I[:][i]+np.roll(I[:][i],-1))*1/(deltaX**2)
+        )*deltaT
+        rUpdate = R[:][i] + (rho*I[:][i])*deltaT
+        dUpdate = D[:][i] + (alpha*I[:][i])*deltaT
+        S[:][i+1] = sUpdate
+        I[:][i+1] = iUpdate
+        R[:][i+1] = rUpdate
+        D[:][i+1] = dUpdate
+    return S,I,R,D
+##
 S,I,R,D = initialiseArrays()
 ##
-S,I,R,D = propagateSIR(S,I,R,D,N)
+S,I,R,D = propagateSIRWithID(S,I,R,D,N)
 ##
 def sirPlotter(S,I,R,D,N,J,finalTime,finalSpace,beta):
     tValues = np.linspace(0,finalTime,num=N)/beta
     xValues = np.linspace(0,finalSpace,num=J)
     X,T = np.meshgrid(xValues,tValues)
-    fig = plt.figure(figsize=(5,5))
+    fig = plt.figure(figsize=(10,8))
     ax1 = fig.add_subplot(2,2,1,projection='3d')
     ax1.plot_surface(X,T,S,cmap=cm.coolwarm)
     ax1.set_xlabel('Position in Space')
@@ -95,6 +116,12 @@ def sirPlotter(S,I,R,D,N,J,finalTime,finalSpace,beta):
     ax4.set_ylabel('Time (days)')
     ax4.set_zlabel('Dead')
     plt.suptitle('Plot of S,I,R with a diffusivity model (percentage of populace)')
+    plt.tight_layout()
+    ax1.ticklabel_format(style='sci', scilimits=(-3, 4), axis='z')
+    ax2.ticklabel_format(style='sci', scilimits=(-3, 4), axis='z')
+    ax3.ticklabel_format(style='sci', scilimits=(-3, 4), axis='z')
+    ax4.ticklabel_format(style='sci', scilimits=(-1, 4), axis='z')
     plt.show()
+    return fig
 
-sirPlotter(S,I,R,D,N,J,finalTime,finalSpace,beta)
+fig = sirPlotter(S,I,R,D,N,J,finalTime,finalSpace,beta)

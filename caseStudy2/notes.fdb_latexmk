@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1668694203 "notes.tex" "notes.pdf" "notes" 1668694204
+["pdflatex"] 1668696847 "notes.tex" "notes.pdf" "notes" 1668696848
   "/dev/null" 0 -1 0 ""
   "/home/sulch/.git_projects/ztex/texmf/tex/latex/local/tufte-book.cls" 1613292990 2212 72b8d9b2edd5e439b6164c9cfea2517f ""
   "/home/sulch/.git_projects/ztex/texmf/tex/latex/local/tufte-common.def" 1614246848 70890 39ee6270ae2a5eaafbeb4d9099c5adc6 ""
@@ -21,6 +21,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/mathpazo/zplmr7y.tfm" 1650183167 1316 b4037e9c09961a72f8476628774e1ec1 ""
   "/usr/share/texmf-dist/fonts/type1/public/fpl/fplrc8a.pfb" 1650183167 62231 6fa2851364e6117779162ea79cb96ef4 ""
   "/usr/share/texmf-dist/fonts/type1/public/fpl/fplrij8a.pfb" 1650183167 58411 be6be158edebf79e4cde3c52c70cc0ed ""
+  "/usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb" 1650183167 52665 661b1e6b26edb5f50dd491f8a701cb57 ""
   "/usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb" 1650183167 50022 90249cba7e3e4e9845f80328d6f9bd13 ""
   "/usr/share/texmf-dist/fonts/vf/adobe/palatino/pplr9d.vf" 1650183167 2328 731ef1560c9cc8d6a9b524fbb0f55663 ""
   "/usr/share/texmf-dist/fonts/vf/adobe/palatino/pplri9d.vf" 1650183167 2328 b4b85e045d04906281f01d959b20f19d ""
@@ -119,9 +120,9 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1650183167 39911 2da6c67557ec033436fe5418a70a8a61 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1666444770 4279749 bb23f2b98a377c1622c83b4f54f23034 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1666444757 2927664 9eaffb523ab5bf4b99774602a9b951f6 ""
-  "notes.aux" 1668694204 1062 13596fc87c4561e8a63cfe6bf6254c0a "pdflatex"
-  "notes.out" 1668694204 392 b415dc8b88dcce026892c666ee5ab40f "pdflatex"
-  "notes.tex" 1668694202 580 b72026b8849f62fc02255a8b54b8bba8 ""
+  "notes.aux" 1668696848 1062 13596fc87c4561e8a63cfe6bf6254c0a "pdflatex"
+  "notes.out" 1668696848 392 b415dc8b88dcce026892c666ee5ab40f "pdflatex"
+  "notes.tex" 1668696847 585 b78121f84a8ea84311e5b6b2448426f0 ""
   (generated)
   "notes.aux"
   "notes.log"

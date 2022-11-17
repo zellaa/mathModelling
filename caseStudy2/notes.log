@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.10.22)  17 NOV 2022 14:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/Arch Linux) (preloaded format=pdflatex 2022.10.22)  17 NOV 2022 14:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -740,14 +740,15 @@ Here is how much of TeX's memory you used:
  32710 multiletter control sequences out of 15000+600000
  497811 words of font info for 94 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,13n,94p,1002b,397s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 94i,13n,94p,1002b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-dist/fon
 ts/type1/public/fpl/fplrc8a.pfb></usr/share/texmf-dist/fonts/type1/public/fpl/f
-plrij8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
-Output written on notes.pdf (1 page, 27664 bytes).
+plrij8a.pfb></usr/share/texmf-dist/fonts/type1/urw/palatino/uplr8a.pfb></usr/sh
+are/texmf-dist/fonts/type1/urw/palatino/uplri8a.pfb>
+Output written on notes.pdf (1 page, 37174 bytes).
 PDF statistics:
- 38 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 43 PDF objects out of 1000 (max. 8388607)
+ 31 compressed objects within 1 object stream
  4 named destinations out of 1000 (max. 500000)
  37905 words of extra memory for PDF output out of 42996 (max. 10000000)
 
